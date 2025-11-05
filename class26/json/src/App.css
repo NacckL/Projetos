@@ -1,0 +1,147 @@
+:root {
+  --bg: #131214; /* 6️⃣ Change main background color */
+  --panel: #d45dbd;
+  --text: #e8eef6;
+  --muted: #9db0c9;
+  --accent: #4da3ff;
+  --accent-2: #0f7b8e;
+  --ring: rgba(145, 5, 135, 0.35);
+  --border: #da5fb1;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.app {
+  max-width: 880px;
+  margin: 40px auto;
+  padding: 0 16px;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+}
+
+.search {
+  width: 300px;
+  max-width: 60%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  outline: none;
+  transition: box-shadow 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+/* 9️⃣ Highlight active search */
+.search:not(:placeholder-shown) {
+  border-color: var(--accent);
+  background-color: #9a0b9f;
+}
+
+.search:focus {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.clear-btn {
+  background-color: var(--accent);
+  border: none;
+  color: rgb(97, 102, 235);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.clear-btn:hover {
+  background-color: var(--accent-2);
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 10px 0 20px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+  justify-content: center;   /* centraliza horizontalmente */
+  align-items: center;       /* centraliza verticalmente (se houver altura definida) */
+
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-2);
+  box-shadow: 0 8px 30px rgba(30, 19, 19, 0.799);
+}
+
+.title {
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.link {
+  width: fit-content;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(110, 64, 201, 0.4);
+}
+
+.link:hover {
+  color: var(--accent-2);
+  border-bottom-color: rgba(50, 7, 130, 0.6);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
